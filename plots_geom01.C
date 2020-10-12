@@ -16,6 +16,22 @@ Int_t plots_geom01(){
   TString fileN;
   TString fileN_outPDf;
   //only PMT
+  //900 V
+  //fileN = "../root_data_L2/Run_001_Data_9_22_2020_Binary/Run_001_Data_9_22_2020_Binary.bin.L1.root.L2.root";  
+  //fileN_outPDf="RunID_001_V900_noquartz.pdf";
+  //1000
+  //fileN = "../root_data_L2/Run_002_Data_9_22_2020_Binary/Run_002_Data_9_22_2020_Binary.bin.L1.root.L2.root";  
+  //fileN_outPDf="RunID_002_V1000_noquartz.pdf";
+  //1100
+  //fileN = "../root_data_L2/Run_003_Data_9_22_2020_Binary/Run_003_Data_9_22_2020_Binary.bin.L1.root.L2.root";  
+  //fileN_outPDf="RunID_003_V1100_noquartz.pdf";
+  //1200
+  //fileN = "../root_data_L2/Run_004_Data_9_22_2020_Binary/Run_004_Data_9_22_2020_Binary.bin.L1.root.L2.root";  
+  //fileN_outPDf="RunID_004_V1200_noquartz.pdf";
+  //800
+  //fileN = "../root_data_L2/Run_005_Data_9_22_2020_Binary/Run_005_Data_9_22_2020_Binary.bin.L1.root.L2.root";  
+  //fileN_outPDf="RunID_005_V800_noquartz.pdf";
+
   //fileN = "../root_data_L2/Run_002_Data_9_22_2020_Binary/Run_002_Data_9_22_2020_Binary.bin.L1.root.L2.root";  
   //fileN_outPDf="RunID_002_noquartz.pdf";
   //Quartz tube 240/1200
@@ -37,8 +53,8 @@ Int_t plots_geom01(){
   //fileN = "../root_data_L2/Run_015_Data_9_23_2020_Binary/Run_015_Data_9_23_2020_Binary.bin.L1.root.L2.root";  
   //fileN_outPDf="RunID_015_box_glue.pdf";
   //Quartz box de-polishing 150
-  fileN = "../root_data_L2/Run_016_Data_9_23_2020_Binary/Run_016_Data_9_23_2020_Binary.bin.L1.root.L2.root";  
-  fileN_outPDf="RunID_016_box_de_polishing_150.pdf";
+  //fileN = "../root_data_L2/Run_016_Data_9_23_2020_Binary/Run_016_Data_9_23_2020_Binary.bin.L1.root.L2.root";  
+  //fileN_outPDf="RunID_016_box_de_polishing_150.pdf";
   
   TFile *f1 = new TFile(fileN.Data());
 
@@ -181,21 +197,28 @@ Int_t plots_geom01(){
   h1_13->Draw();
   h1_23->Draw("sames");
   h1_13->GetXaxis()->SetTitle("Amplitude, V");
-  h1_13->GetXaxis()->SetRangeUser( 0.04, 0.2);
+  h1_13->GetXaxis()->SetRangeUser( 0.0, 0.4);
+  //h1_13->GetXaxis()->SetRangeUser( 0.04, 0.2);
+  //h1_13->GetXaxis()->SetRangeUser( 0.02, 0.2);
+  //h1_13->GetXaxis()->SetRangeUser( 0.0, 0.2);
   //
   c1->cd(5);
   gPad->SetLogy();
   h1_14->Draw();
   h1_24->Draw("sames");
-  h1_14->GetXaxis()->SetTitle("Charge, pC");
-  h1_14->GetXaxis()->SetRangeUser(0.2, 1.5);
+  h1_14->GetXaxis()->SetTitle("Charge, nVs");
+  h1_14->GetXaxis()->SetRangeUser(0.0, 3.0);
+  //h1_14->GetXaxis()->SetRangeUser(0.2, 1.5);
+  //h1_14->GetXaxis()->SetRangeUser(0.1, 1.5);
+  //h1_14->GetXaxis()->SetRangeUser(0.0, 1.5);
   //
   c1->cd(6);
   gPad->SetLogy();
   h1_15->Draw();
   h1_25->Draw("sames");
   h1_15->GetXaxis()->SetTitle("#Delta time, ns");
-  h1_15->GetXaxis()->SetRangeUser( 10, 20);
+  h1_15->GetXaxis()->SetRangeUser( 5, 25);
+  //h1_15->GetXaxis()->SetRangeUser( 10, 20);
   //h1_15->GetXaxis()->SetTitle("#Fall time, ns");
   //h1_15->GetXaxis()->SetRangeUser( 0.0, 50.0);
   //h1_10->Draw();
